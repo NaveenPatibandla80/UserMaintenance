@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngIf="!usersList || !usersList.length">
+        <h3> No Users Found in the System.</h3>
+    </div>
+    <div *ngIf="usersList && usersList.length">
+        <h3>Total numner of users : {{usersList.length}}</h3>
+    </div>
+    <div class="row">
+    <div *ngFor="let user of usersList" class="col-sm-4 card md-3 userInfoTile" style="height: 250px;">
+            {{user.id}}
+    </div>
+    </div>
+
+</div>
