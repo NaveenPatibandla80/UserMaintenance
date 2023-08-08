@@ -11,27 +11,35 @@ import { UserService } from './services/User.service';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Router, RouterModule } from '@angular/router';
+import appRoutes from './router.config';
+import { SharedPropertyService } from './services/shared-property.service';
+import { AboutComponent } from './components/about/about.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetaisComponentComponent,
     UserListComponentComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    AboutComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbModule
-  ],
-  providers: [HttpClientModule, UserService],
+    NgbModule,
+    RouterModule.forRoot(appRoutes)  ],
+  providers: [HttpClientModule, UserService, SharedPropertyService],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { 
-  constructor(library: FaIconLibrary) {
+  constructor(library: FaIconLibrary, router:Router) {
     library.addIconPacks(fas);
+    router.navigate(['/home']);
   }
 }

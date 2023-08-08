@@ -7,6 +7,7 @@ export interface UserInfoModel {
     phone: string
     website: string
     company: Company
+    deleted: boolean
   }
   
   export interface Address {

@@ -1,14 +1,29 @@
 <div class="container">
-    <div *ngIf="!usersList || !usersList.length">
-        <h3> No Users Found in the System.</h3>
+    <div *ngIf="errorMsg.length > 0 else showUserCount" class="m-3 text-danger">
+        <h5 class=""> {{errorMsg}}</h5>
     </div>
-    <div *ngIf="usersList && usersList.length">
-        <h3>Total numner of users : {{usersList.length}}</h3>
-    </div>
-    <div class="row">
-    <div *ngFor="let user of usersList" class="col-sm-4 card md-3 userInfoTile" style="height: 250px;">
-            {{user.id}}
-    </div>
-    </div>
+    <ng-template #showUserCount>
+        <div *ngIf="!usersList || !usersList.length" class="m-3 text-danger">
+            <h5 class=""> No Users found in the System.</h5>
+        </div>
+        <div *ngIf="usersList && usersList.length" class="m-3">
+            <h5>Showing {{usersList.length}} Records</h5>
+        </div>
+    </ng-template>
 
+    <div class="row equal">
+        <div *ngFor="let user of usersList" class="col-md-4 md-3 equal" style="min-height: 250px;">
+            <div class="card" (click)="showUserDetails(user)">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="['fas', 'user']" size="2x"></fa-icon> {{user.name}}</h5>
+                    <div class="fa-solid fa-user"></div>
+                    <div class="d-flex flex-column bd-highlight">
+                        <div class="p-2 bd-highlight">{{user?.company?.name}}</div>
+                        <div class="p-2 bd-highlight">{{user.email}}</div>
+                        <div class="p-2 bd-highlight">{{user.phone}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

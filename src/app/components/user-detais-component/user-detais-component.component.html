@@ -1,1 +1,79 @@
-<p>user-detais-component works!</p>
+<div class="container m-3">
+    <div class="row gutters-sm">
+        <div class="col-md-8 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column">
+                        <fa-icon [icon]="['fas', 'user']" size="3x"></fa-icon>
+                        <div class="mt-3">
+                            <h4>{{currentUser.name}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6>User Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary mb-3">
+                            <div  >
+                                {{currentUser.username}}
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6>Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary d-flex flex-column text-left mb-3">
+                            <div >
+                                {{currentUser.address.street}}&nbsp; <span *ngIf="currentUser.address.suite">{{currentUser.address.suite}}</span>
+                            </div>
+                            <div >
+                                {{currentUser.address.city}}&nbsp;{{currentUser.address.zipcode}}
+                            </div>
+                            <div>
+                                <a [href]="'https://maps.google.com/maps?q=' + currentUser.address.geo.lat + ',' + currentUser.address.geo.lng + '&hl=es;z=14&amp;output=embed'" target="_blank">Map</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6>Company</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary d-flex flex-column text-left mb-3">
+                            <div  >
+                                {{currentUser.company.name}} 
+                            </div>
+                            <span class="fst-italic">
+                                {{currentUser.company.catchPhrase}} 
+                            </span>
+                            <span>
+                                {{currentUser.company.bs}} 
+                            </span>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h6>Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary mb-3">
+                            <div  >
+                                {{currentUser.email}}
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h6>Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary mb-5">
+                            <div  >
+                                {{currentUser.phone}}
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <button type="button" class="btn btn-primary btn-margin" (click) = "deleteUser()">Delete</button>
+                            <button type="button" class="btn btn-secondary" (click)="navigateBack()">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
