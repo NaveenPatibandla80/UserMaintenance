@@ -5,14 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## How to run?
 
 * Check out the code
-* Run `npm install`
-* run `ng serve`
+* run `npm install`
+* to build and run `ng serve`
 * Launch the browser and navigate to `http://localhost:4200/`
 
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Current Features
 * This SPA (Single Page Application) is to maintain a list of  users.
