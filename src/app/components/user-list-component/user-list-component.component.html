@@ -13,7 +13,7 @@
 
     <div class="row equal">
         <div *ngFor="let user of usersList" class="col-md-4 md-3 equal" style="min-height: 250px;">
-            <div class="card" (click)="showUserDetails(user)">
+            <div class="card shadow-sm" (click)="showUserDetails(user)">
                 <div class="card-body">
                     <h5 class="card-title"><fa-icon [icon]="['fas', 'user']" size="2x"></fa-icon> {{user.name}}</h5>
                     <div class="fa-solid fa-user"></div>
