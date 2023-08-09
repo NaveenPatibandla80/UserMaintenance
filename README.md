@@ -9,6 +9,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * to build and run `ng serve`
 * Launch the browser and navigate to `http://localhost:4200/`
 
+## Project Structure
+* src      --> Root folders for the source
+* * app
+  * * components  --> holds all the components
+    * models      -->  model/data objects
+    * services    --> API and Utiity services
 
 ## Current Features
 * This SPA (Single Page Application) is to maintain a list of  users.
